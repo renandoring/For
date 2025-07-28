@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Digite seu nome">
+    <p></p>
+    <button onclick="buscaDados()">Pesquisar</button>
+
+    <script>
+        let p = document.querySelector('p')
+        let input = document.querySelector('input')
+
+        const contacts = [
+            { name: 'Rodolfo', number: '(15) 99999-9999' },
+            { name: 'Renan', number: '(15) 99999-9999' },
+            { name: 'Marina', number: '(15) 99999-9999' },
+            { name: 'Ryu', number: '(15) 99999-9999' },
+            { name: 'Marcos', number: '(15) 99999-9999' },
+            { name: 'Duda', number: '(15) 99999-9999' },
+        ]
+
+        function buscaDados() {
+            for (let i = 0; i < contacts.length; i++) {
+                if (input.value.toLocaleLowerCase() === contacts[i].name.toLocaleLowerCase()) {
+                    p.innerHTML = `Contato encontrado segue os dados: Nome: ${contacts[i].name}, Tel: ${contacts[i].number}`
+                    //console.log(found)
+                    break
+                } else {
+                    p.innerHTML = "Contato não encontrado."
+                } 
+            }
+        }
+    </script>
+</body>
+
+</html>
